@@ -1,24 +1,23 @@
-# dawarichPointInsert
-bash script to manually add GPS points to your Dawarich database via command line
+# dawarichTools
 
-## Features
-
-- add single GPS point with custom date/time
-- add multiple points in sequence (forward/backward in time)
-- automatic timezone handling (Europe/Berlin)
-- 30-second intervals for bulk imports
-- copy coordinates directly from Google Maps
+Collection of bash scripts for managing Dawarich, a self-hosted location tracking application.
 
 ## Requirements
 
-- running Dawarich Docker setup
-- postgreSQL container named `dawarich_db`
-- bash shell
+- Running Dawarich Docker setup
+- PostgreSQL container named `dawarich_db`
+- Bash shell
 
-## Usage
+## Scripts
 
-right-click any location in Google Maps, copy the coordinates, and paste them directly into the script
+**dawarichPointInsert.sh** - Manually add GPS points to the Dawarich database. Supports single point entry and bulk imports with customizable dates and times. Coordinates can be copied directly from Google Maps.
 
-## Note
+**dawarichCopyPoints.sh** - Copy existing GPS points from the database. Useful for backing up or transferring location data.
 
-change timezone in the script if needed + you might have to edit or remove `- INTERVAL '1 hour'`
+**dawarichDB.sh** - Database management helper script for accessing the Dawarich PostgreSQL container.
+
+**dawarichRails.sh** - Rails console access script for direct interaction with the Dawarich application.
+
+## Configuration
+
+Timezone is set to Europe/Berlin by default and can be adjusted in the scripts as needed.
